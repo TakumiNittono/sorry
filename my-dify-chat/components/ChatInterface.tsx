@@ -105,10 +105,6 @@ export default function ChatInterface() {
     }));
   };
 
-  useEffect(() => {
-    setIsMac(typeof navigator !== 'undefined' && navigator.platform.includes('Mac'));
-  }, []);
-
   // テキストエリアの高さを自動調整
   useEffect(() => {
     if (textareaRef.current) {
