@@ -155,7 +155,6 @@ export default function ChatInterface() {
     setInput('');
     setIsLoading(true);
     setError(null);
-    setStreamingContent('');
 
     // テキストエリアの高さをリセット
     if (textareaRef.current) {
@@ -244,7 +243,6 @@ export default function ChatInterface() {
         
         setError(fullErrorMessage);
         setIsLoading(false);
-        setStreamingContent('');
         return;
       }
 
@@ -277,7 +275,6 @@ export default function ChatInterface() {
               return updated;
             });
           }
-          setStreamingContent('');
           setIsLoading(false);
           break;
         }
@@ -304,7 +301,6 @@ export default function ChatInterface() {
                   return updated;
                 });
               }
-              setStreamingContent('');
               setIsLoading(false);
               return;
             }
@@ -331,7 +327,6 @@ export default function ChatInterface() {
                     return updated;
                   });
                 }
-                setStreamingContent('');
                 setIsLoading(false);
                 return;
               }
@@ -382,7 +377,6 @@ export default function ChatInterface() {
       console.error('Error:', err);
       setError(err instanceof Error ? err.message : 'An error occurred');
       setIsLoading(false);
-      setStreamingContent('');
     }
   };
 
