@@ -84,13 +84,14 @@ export async function POST(request: NextRequest) {
                     controller.close();
                     return;
                   }
-                } catch (e) {
+                } catch {
                   continue;
                 }
               }
             }
           }
         } catch (error) {
+          console.error('Stream error:', error);
           controller.error(error);
         }
       },
@@ -103,7 +104,7 @@ export async function POST(request: NextRequest) {
         'Connection': 'keep-alive',
       },
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

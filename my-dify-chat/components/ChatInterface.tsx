@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Send, Bot, User, LogIn, UserPlus, X, MessageSquare, Plus, Trash2, Menu, ChevronLeft, Paperclip, File, ArrowUp, Mic } from 'lucide-react';
+import { Bot, User, X, MessageSquare, Plus, Trash2, Menu, ChevronLeft, Paperclip, File, ArrowUp } from 'lucide-react';
 import { clsx } from 'clsx';
 
 interface Message {
@@ -30,8 +30,6 @@ export default function ChatInterface() {
   const [error, setError] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [streamingContent, setStreamingContent] = useState('');
-  const [isMac, setIsMac] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -46,8 +44,8 @@ export default function ChatInterface() {
       try {
         const parsed = JSON.parse(saved);
         setConversations(parsed);
-      } catch (e) {
-        console.error('Failed to load conversations:', e);
+      } catch {
+        console.error('Failed to load conversations');
       }
     }
   }, []);
@@ -59,8 +57,6 @@ export default function ChatInterface() {
     }
   }, [conversations]);
 
-  // 現在の会話を取得
-  const currentConversation = conversations.find(c => c.id === currentConversationId);
 
   // 新しいチャットを開始
   const startNewChat = () => {
@@ -211,7 +207,7 @@ export default function ChatInterface() {
               } else if (errorData.message) {
                 errorDetails = errorData.message;
               }
-            } catch (e) {
+            } catch {
               // JSONではない場合はそのまま使用
               console.log('[DEBUG] Error text is not JSON, using as-is');
               errorMessage = errorText;
@@ -358,7 +354,7 @@ export default function ChatInterface() {
                   accumulatedContent += newContent;
                 }
               }
-            } catch (e) {
+            } catch {
               // JSONパースエラーは無視
             }
           }
