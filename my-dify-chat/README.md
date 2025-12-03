@@ -4,11 +4,10 @@ Dify APIを利用したChatGPT風のチャットボットUIアプリケーショ
 
 ## 技術スタック
 
-- **Framework**: Next.js 14+ (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Icons**: lucide-react
-- **HTTP Client**: axios / fetch
 - **Markdown Rendering**: react-markdown
 
 ## セットアップ
