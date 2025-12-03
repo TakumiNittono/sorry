@@ -1,6 +1,6 @@
-# Dify Chat Application
+# NITTONO社専用謝罪AIツール
 
-Dify APIを利用したChatGPT風のチャットボットUIアプリケーションです。
+NITTONO社専用の謝罪AIツールです。Dify APIを利用したChatGPT風のチャットボットUIアプリケーションです。
 
 ## 技術スタック
 

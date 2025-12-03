@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chat Application",
-  description: "Chat interface",
+  title: "NITTONO社専用謝罪AIツール",
+  description: "NITTONO社専用の謝罪AIツール",
 };
 
 export default function RootLayout({
