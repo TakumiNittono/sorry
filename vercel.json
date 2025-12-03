@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd my-dify-chat && npm run build",
+  "outputDirectory": "my-dify-chat/.next",
+  "installCommand": "cd my-dify-chat && npm install",
+  "framework": null,
+  "rootDirectory": "my-dify-chat"
+}
+
